@@ -22,8 +22,9 @@ Install and enable postfix. Configure "relay_domains=$mydestination" and
 ---
 - hosts: all
   vars:
-    relay_domains: "$mydestination"
-    relay_host: "example.com"
+    postfix_conf:
+      relay_domains: "$mydestination"
+      relay_host: "example.com"
   roles:
     - ansible-role-postfix
 ```
